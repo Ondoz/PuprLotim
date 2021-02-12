@@ -25,7 +25,7 @@
 
 						<tbody>
 							<?php $i = 1 ?>
-							<?php foreach ($sda as $key => $value) : ?>
+							<?php foreach ($menu as $key => $value) : ?>
 								<tr>
 									<td><?= $i++ ?></td>
 									<td><?= $value['title'] ?></td>

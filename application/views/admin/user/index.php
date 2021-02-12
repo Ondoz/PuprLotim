@@ -30,7 +30,7 @@
 					<div class="card-box">
 						<div class="contact-card">
 							<a class="pull-left" href="#">
-								<img class="img-circle" src="https://api.adorable.io/avatars/100/<?= $value['user_email'] ?>" alt="">
+								<img class="img-circle" src="https://api.hello-avatar.com/adorables/100/<?= $value['user_email'] ?>" alt="">
 							</a>
 							<div class="member-info" style="padding-bottom: 0px;">
 								<h5 class="m-t-0 m-b-0 header-title"><b><?= $value['name'] ?></b></h5>
@@ -65,25 +65,25 @@
 	</button>
 	<h4 class="custom-modal-title" id="modalLable">Add User</h4>
 	<div class="custom-modal-text text-left">
-		<form  action="<?= base_url('admin/user') ?>" method="post">
+		<form action="<?= base_url('admin/user') ?>" method="post">
 			<input type="hidden" name="user_id" id="user_id">
 
 			<!-- <input type="text" name="no" value="<?php echo $kode; ?>" readonly="readonly"> -->
 			<div class="form-group">
 				<label for="name">Nama</label>
-				<input type="text" class="form-control" id="name"  name="name">
+				<input type="text" class="form-control" id="name" name="name">
 			</div>
 			<div class="form-group">
 				<label for="email">Email</label>
-				<input type="email" class="form-control" id="email"  name="user_email">
+				<input type="email" class="form-control" id="email" name="user_email">
 			</div>
 			<div class="form-group">
 				<label for="password">Password</label>
-				<input type="text" class="form-control" id="password"  name="user_password">
+				<input type="text" class="form-control" id="password" name="user_password">
 			</div>
 			<div class="form-group">
 				<label for="role_id">Role User</label>
-				<select class="form-control" name="role_id" id="role_id" >
+				<select class="form-control" name="role_id" id="role_id">
 
 					<?php $i = 1 ?>
 					<?php foreach ($role as $key => $value) : ?>

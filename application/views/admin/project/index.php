@@ -18,6 +18,7 @@
 								<th>Satuan Kerja</th>
 								<th>Tanggal Mulai</th>
 								<th>Tanggal Selesai</th>
+								<th>Kategori</th>
 								<th>Aksi</th>
 							</tr>
 						</thead>
@@ -32,6 +33,7 @@
 									<td><?= $value['satuan_kerja'] ?></td>
 									<td><?= date('j M Y', strtotime($value['tgl_mulai'])) ?></td>
 									<td><?= date('j M Y', strtotime($value['tgl_selesai'])) ?></td>
+									<td><?= $value['name']?></td>
 									<td>
 										<a href="<?php echo base_url("admin/project/hpsProject/" . $value['id']) ?>" class="btn btn-danger btn-xs" onclick="return confirm('yakin?')"><i class="md  md-clear"></i></a>
 										<a href="<?= base_url("admin/project/editProject/" . $value['id']) ?>" class="btn  btn-warning btn-xs waves-effect waves-light "><i class="md md-edit"></i></a>

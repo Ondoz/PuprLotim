@@ -1,11 +1,13 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed');
 
-class Model_Project extends CI_Model
+class Model_project extends CI_Model
 {
 	public $_table = "tb_project";
 
 	public function getAll()
 	{
+		$this->db->select('*', 'tb_categori.id as categori_id');
+		$this->db->join('tb_categori', 'tb_project.categori_id = tb_categori.categori_id', 'left');
 		return $this->db->get($this->_table)->result_array();
 	}
 
@@ -51,6 +53,7 @@ class Model_Project extends CI_Model
 			'jumlah_hk' 			=> $post['jumlah_hk'],
 			'tgl_mulai' 			=> $post['tgl_mulai'],
 			'tgl_selesai' 			=> $post['tgl_selesai'],
+			'categori_id'			=> $post['categori_id']
 		);
 		$this->db->insert('tb_project', $data);
 	}

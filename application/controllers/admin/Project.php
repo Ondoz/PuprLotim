@@ -1,19 +1,21 @@
 <?php
-defined('BASEPATH') or exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed'); 
+
 class Project extends CI_Controller
 {
     function __construct()
     {
         parent::__construct();
-        $this->load->model("model_project");
+		$this->load->model("model_project");
         $this->load->library('form_validation');
+		$this->load->model("model_categori");
         is_logged_in();
     }
 
     function index()
     {
-        $data['project'] = $this->model_project->getAll();
-
+		$data['project'] = $this->model_project->getAll();
+		// echo response_json($data);
         $this->load->view('layouts/header');
         $this->load->view('_partalis/navigation');
         $this->load->view('admin/project/index', $data);
@@ -25,6 +27,7 @@ class Project extends CI_Controller
         $data['no_spk'] = $this->model_project->no_spk();
         $data['no_supl'] = $this->model_project->no_supl();
         $data['no_bahpl'] = $this->model_project->no_bahpl();
+		$data['categori'] = $this->model_categori->getAll();
         $this->load->view('layouts/header');
         $this->load->view('_partalis/navigation');
         $this->load->view('admin/project/add_project', $data);
@@ -56,6 +59,9 @@ class Project extends CI_Controller
         $data['value'] = $this->model_project->show($id);
         $data['data'] = $this->model_project->data_project($id);
         $data['id'] = $id;
+
+		// echo response_json($data);
+
         $this->load->view('layouts/header');
         $this->load->view('_partalis/navigation');
         $this->load->view('admin/project/data_project/index', $data);
@@ -159,12 +165,14 @@ class Project extends CI_Controller
         $data['value'] = $this->model_project->show($id);
         $data['data'] = $this->model_project->data_project($id);
 
-        $this->load->library('pdf');
+		$this->load->library('Pdf');
 
         $this->pdf->setPaper('A4', 'potrait');
         $this->pdf->filename = "laporan-petanikode.pdf";
-        $this->pdf->load_view('admin/project/pdf', $data)->setOption('enable-javascript', true);
-        // $this->pdf->load_view('admin/project/pdf', $data);
-        // $this->load->view('admin/project/edit_project', $data);
+		$this->pdf->load_view('admin/project/pdf', $data)->setOption(['enable-javascript' => true, 'isRemoteEnabled' => true]);
+		$this->pdf->load_view('admin/project/pdf', $data);
+		// $this->pdf->;
+		$this->load->view('admin/project/edit_project', $data);
+		// $this->options->setIsRemoteEnabled(true);
     }
 }

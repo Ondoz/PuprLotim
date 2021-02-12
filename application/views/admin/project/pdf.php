@@ -30,7 +30,11 @@
 <body>
     <table style="border-collapse:collapse; border:none">
         <tr style="border:none">
-            <td rowspan="2" style="border:none;padding:0px;"><img src="assets/images/logo.png" height="100px"></td>
+            <td rowspan="2" style="border:none;padding:0px;">
+				<!-- <img src="assets/images/logo.pn?>" height="100px"> -->
+				<!-- <img src="<?= base_url('assets/images/logo.png')?>"/> -->
+				<img src="<?= base_url('assets/image/logo.png')?>"/>
+			</td>
             <td colspan="1" style="border:none;padding:0px; vertical-align : middle;text-align: center;">
                 <span style="font-size:18px;"><b>PEMERINTAH KABUPATEN LOMBOK TIMUR</b></span><br>
                 <span style="font-size:22px"><b>DINAS PEKERJAAN UMUM DAN PENATAAN RUANG</b></span><br>
@@ -38,9 +42,9 @@
         </tr>
         <tr>
             <td colspan="1" style="border:none;vertical-align : middle;text-align: right;"><span style="font-weight:normal;">
-                    <span style="font-size:12px;"><b>Alamat: jalan TGKH. Muhammad Zainuddin Abdul Majid No.162 - 164 Selong 83612</b></span><br>
-                    <span style="font-size:12px;"><b>Telpon (0376) 21425, 22691 Exrtension (0376) 21726,22690) or (0376) 22715</b></span><br>
-                    <span style="font-size:12px;"><b>Website: www.lomboktimurkab.go.id</b></span><br>
+				<span style="font-size:12px;"><b>Alamat: jalan TGKH. Muhammad Zainuddin Abdul Majid No.162 - 164 Selong 83612</b></span><br>
+				<span style="font-size:12px;"><b>Telpon (0376) 21425, 22691 Exrtension (0376) 21726,22690) or (0376) 22715</b></span><br>
+				<span style="font-size:12px;"><b>Website: www.lomboktimurkab.go.id</b></span><br>
             </td>
         </tr>
     </table>
